@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.5 on win32)" generated="20210607 18:25:15.532" rpa="false" schemaversion="2">
+<suite id="s1" name="Feature login1" source="E:\RobotFramework\SauceLabsProject CSV\Tests\Feature_login1.robot">
+<kw name="Launch Browser" library="BaseFile1" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210607 18:25:15.963" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com'.</msg>
+<status status="PASS" starttime="20210607 18:25:15.963" endtime="20210607 18:25:21.906"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210607 18:25:21.906" endtime="20210607 18:25:22.031"/>
+</kw>
+<status status="PASS" starttime="20210607 18:25:15.962" endtime="20210607 18:25:22.031"/>
+</kw>
+<test id="s1-t1" name="Test with CSV File">
+<kw name="Get data from CSV file" library="DataManage">
+<var>${Testdata}</var>
+<arg>${InputFilePath}</arg>
+<kw name="${Data} = read csv file">
+<arg>${FilePath}</arg>
+<msg timestamp="20210607 18:25:22.037" level="FAIL">No keyword with name '${Data} = read csv file' found.</msg>
+<status status="FAIL" starttime="20210607 18:25:22.037" endtime="20210607 18:25:22.037"/>
+</kw>
+<status status="FAIL" starttime="20210607 18:25:22.033" endtime="20210607 18:25:22.037"/>
+</kw>
+<kw name="Test with File" library="HomePage1">
+<arg>${Testdata}</arg>
+<status status="NOT RUN" starttime="20210607 18:25:22.038" endtime="20210607 18:25:22.038"/>
+</kw>
+<status status="FAIL" starttime="20210607 18:25:22.032" endtime="20210607 18:25:22.039">No keyword with name '${Data} = read csv file' found.</status>
+</test>
+<kw name="Close The Browser" library="BaseFile1" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210607 18:25:22.041" endtime="20210607 18:25:24.428"/>
+</kw>
+<status status="PASS" starttime="20210607 18:25:22.041" endtime="20210607 18:25:24.429"/>
+</kw>
+<status status="FAIL" starttime="20210607 18:25:15.535" endtime="20210607 18:25:24.429"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Feature login1">Feature login1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210607 18:25:15.956" level="ERROR">Error in file 'E:\RobotFramework\SauceLabsProject CSV\Resources\DataManager\DataManage.robot' on line 3: Test library '..\Custom Library\ReadCSV.py' does not exist.</msg>
+</errors>
+</robot>
